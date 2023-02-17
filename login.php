@@ -50,7 +50,6 @@
         </div>
     </div>
 </section>
-
 <!-- ======= Footer ======= -->
 <section class="h-75 gradient-form" style="background-color: #eee;">
     <section class="vh-100">
@@ -136,6 +135,7 @@
 
 <!-- Template Main JS File -->
 <script src="assets/js/main.js"></script>
+
 
 </body>
 
