@@ -50,100 +50,76 @@
         </div>
     </div>
 </section>
-<header id="header" class="header d-flex align-items-center">
 
-    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-        <a href="index.html" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <!-- <img src="assets/img/logo.png" alt=""> -->
-            <h1>Oxigenio Cariri<span>.</span></h1>
-        </a>
-        <nav id="navbar" class="navbar">
-            <ul>
-                <li><a href="#hero" class="active">Home</a></li>
-                <li><a href="#about" class="">Sobre</a></li>
-                <li><a href="#services" class="">Serviços</a></li>
-                <li><a href="#testimonials" class="">Consulta</a></li>
-                <li><a href="#team" class="">Equipe</a></li>
-                <li><a href="#contact" class="">Contato</a></li>
-                <li><a class="getstarted scrollto" href="login.php">Entrar</a></li>
+<!-- ======= Footer ======= -->
+<section class="h-75 gradient-form" style="background-color: #eee;">
+    <section class="vh-100">
+        <div class="container-fluid h-custom">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col-md-9 col-lg-6 col-xl-5">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                         class="img-fluid" alt="Sample image">
+                </div>
+                <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+                    <form>
+                        <div class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
 
-            </ul>
-        </nav><!-- .navbar -->
+                            <button type="button" class="btn btn-success btn-floating mx-1">
+                                <i class="fab fa-facebook-f"></i>
+                            </button>
 
-        <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
-        <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+                            <button type="button" class="btn btn-success btn-floating mx-1">
+                                <i class="fab fa-twitter"></i>
+                            </button>
 
-    </div>
-</header>
+                            <button type="button" class="btn btn-success btn-floating mx-1">
+                                <i class="fab fa-linkedin-in"></i>
+                            </button>
+                        </div>
 
-<main id="main">
+                        <div class="divider d-flex align-items-center my-4">
 
-    <!-- ======= Breadcrumbs ======= -->
-    <div class="breadcrumbs">
-        <div class="page-header d-flex align-items-center" style="background-image: url('');">
-            <div class="container position-relative">
-                <div class="row d-flex justify-content-center">
-                    <div class="col-lg-6 text-center">
-                        <main class="form-signin">
-                            <section id="cta" class="cta">
-                                <div class="d-flex justify-content-center py-3">
-                                    <div class="section-title align-items py-4">
-                                        <form action="login.php" method="POST">
-                                            <h3 class="text-light">Login</h3>
-                                            <div class="field col-md-14 row py-1">
-                                                <div class="control">
-                                                    <input name="usuario" type="text" id="inputEmail"
-                                                           class="form-control" placeholder="Usuário" required=""
-                                                           autofocus="">
-                                                </div>
-                                            </div>
-                                            <div class="field row py-1">
-                                                <div class="control">
-                                                    <input name="senha" class="form-control" type="password"
-                                                           placeholder="Senha" required="">
-                                                </div>
-                                            </div>
+                        </div>
 
+                        <!-- Email input -->
+                        <div class="form-outline mb-4">
+                            <input type="email" id="form3Example3" class="form-control form-control-lg"
+                                   placeholder="Enter a valid email address" />
+                            <label class="form-label" for="form3Example3">Email address</label>
+                        </div>
 
-                                            <a href="painel.html">
-                                                <button type="button" class="btn btn-light">Entrar</button>
-                                            </a>
-                                            <a href="index.html">
-                                                <button type="button" class="btn btn-light">Retornar</button>
-                                            </a>
+                        <!-- Password input -->
+                        <div class="form-outline mb-3">
+                            <input type="password" id="form3Example4" class="form-control form-control-lg"
+                                   placeholder="Enter password" />
+                            <label class="form-label" for="form3Example4">Password</label>
+                        </div>
 
-                                            <a class="cta-btn" href="#">Call To Action</a>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <!-- Checkbox -->
+                            <div class="form-check mb-0">
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                <label class="form-check-label" for="form2Example3">
+                                    Remember me
+                                </label>
+                            </div>
+                            <a href="#!" class="text-body">Forgot password?</a>
+                        </div>
 
+                        <div class="text-center text-lg-start mt-4 pt-2">
+                            <button type="button" class="btn btn-success btn-lg"
+                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Não queria estar aqui? <a href="index.html  "
+                                                                                              class="link-danger">Retornar ao site</a></p>
+                        </div>
 
-                                        </form>
-                                    </div>
-                                </div>
-                            </section>
-                        </main>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
 
-    </div><!-- End Breadcrumbs -->
+    </section>
 
-</main><!-- End #main -->
-
-<!-- ======= Footer ======= -->
-<footer id="footer" class="">
-
-    <div class="container mt-4">
-        <div class="copyright">
-            &copy; Copyright <strong><span>Impact</span></strong>. All Rights Reserved
-        </div>
-        <div class="credits">
-
-        </div>
-    </div>
-
-</footer><!-- End Footer -->
-<!-- End Footer -->
 
 <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
