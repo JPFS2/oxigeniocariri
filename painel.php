@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -37,8 +41,8 @@
 <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
-            <i class="bi bi-envelope d-flex align-items-center"><a
-                    href="mailto:contact@example.com">contact@example.com</a></i>
+            <i class="bi bi-envelope d-flex align-items-center">
+                <a href="mailto:contact@example.com">contact@example.com</a></i>
             <i class="bi bi-phone d-flex align-items-center ms-4"><span>+55 88 3532 0017</span></i>
             <i class="bi bi-whatsapp d-flex align-items-center ms-4"><span>+55 88 98149 2016</span></i>
         </div>
@@ -47,18 +51,22 @@
             <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
             <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
             <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+
         </div>
+        <?= $_SESSION['usuario'] ?>
     </div>
 </section>
 
 
 <!-- ======= Footer ======= -->
-<section class="h-75 gradient-form" style="background-color: #eee;">
+<section class="h-100 gradient-form" style="background-color: #eee; height: auto">
 
     <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
+
+
                     <!--- Title ---->
                     <div class="col-sm-11 py-3">
                         <h2>Relação de <b>cilindros</b></h2>
@@ -149,9 +157,9 @@
                 <div class="modal-body">
                     <form>
                         <div class="mb-3">
-                            <label for="recipient-name"lass="col-form-label">Numero
+                            <label for="recipient-name" lass="col-form-label">Numero
                                 cilindro:</label>
-                            <input type="text"  placeholder="1234567890" c class="form-control" id="recipient-name">
+                            <input type="text" placeholder="1234567890" c class="form-control" id="recipient-name">
                         </div>
                         <div class="row">
                             <div class="col">
@@ -167,7 +175,8 @@
                         <div class="mb-3">
                             <label for="message-text"
                                    class="col-form-label">Observação:</label>
-                            <textarea class="form-control"  placeholder="Cilindro com arranhão na lateral" id="message-text"></textarea>
+                            <textarea class="form-control" placeholder="Cilindro com arranhão na lateral"
+                                      id="message-text"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Certificado de Analise</label>
@@ -189,6 +198,10 @@
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
     <div id="preloader"></div>
+
+
+    <!-- ======= Footer ======= -->
+
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
