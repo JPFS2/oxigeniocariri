@@ -36,7 +36,6 @@ session_start();
 </head>
 
 <body>
-
 <!-- ======= Header ======= -->
 <section id="topbar" class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
@@ -57,7 +56,6 @@ session_start();
     </div>
 </section>
 
-
 <!-- ======= Footer ======= -->
 <section class="h-100 gradient-form" style="background-color: #eee; height: auto">
 
@@ -65,8 +63,6 @@ session_start();
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
-
-
                     <!--- Title ---->
                     <div class="col-sm-11 py-3">
                         <h2>Relação de <b>cilindros</b></h2>
@@ -92,10 +88,10 @@ session_start();
 								<label for="selectAll"></label>
 							</span>
                     </th>
-                    <th>Name</th>
-                    <th>Email</th>
-                    <th>Address</th>
-                    <th>Phone</th>
+                    <th>Numero de cilindro</th>
+                    <th>Fabricação</th>
+                    <th>Vencimento</th>
+                    <th>Endereço</th>
                     <th>Actions</th>
                 </tr>
                 </thead>
@@ -107,10 +103,10 @@ session_start();
 								<label for="checkbox1"></label>
 							</span>
                     </td>
-                    <td>Thomas Hardy</td>
-                    <td>thomashardy@mail.com</td>
-                    <td>89 Chiaroscuro Rd, Portland, USA</td>
-                    <td>(171) 555-2222</td>
+                    <td>1234567890</td>
+                    <td>01/01/2023</td>
+                    <td>01/01/2023</td>
+                    <td>/files/1234567890.pdf</td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
                             <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i>
@@ -123,20 +119,20 @@ session_start();
                 <tr>
                     <td>
 							<span class="custom-checkbox">
-								<input type="checkbox" id="checkbox2" name="options[]" value="1">
-								<label for="checkbox2"></label>
+								<input type="checkbox" id="checkbox1" name="options[]" value="1">
+								<label for="checkbox1"></label>
 							</span>
                     </td>
-                    <td>Dominique Perrier</td>
-                    <td>dominiqueperrier@mail.com</td>
-                    <td>Obere Str. 57, Berlin, Germany</td>
-                    <td>(313) 555-5735</td>
+                    <td>2345678901</td>
+                    <td>01/01/2023</td>
+                    <td>01/01/2023</td>
+                    <td>/files/1234567890.pdf</td>
                     <td>
                         <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                            <i class="bi bi-pencil-square" data-toggle="tooltip" title="Editar"></i>
+                            <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i>
                         </a>
                         <a href="#deleteEmployeeModal" class="delete" data-toggle="modal">
-                            <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Deletar"></i>
+                            <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Delete"></i>
                         </a>
                     </td>
                 </tr>
@@ -159,28 +155,28 @@ session_start();
                         <div class="mb-3">
                             <label for="recipient-name" lass="col-form-label">Numero
                                 cilindro:</label>
-                            <input type="text" placeholder="1234567890" c class="form-control" id="recipient-name">
+                            <input type="text" placeholder="1234567890" c class="form-control" id="numerocilindro" name="numerocilindro">
                         </div>
                         <div class="row">
                             <div class="col">
                                 <label for="recipient-name"
                                        class="col-form-label ">Fab:</label>
-                                <input type="text" placeholder="01/01/1900" class="form-control" id="recipient-name">
+                                <input type="text" placeholder="01/01/1900" class="form-control" id="fabricacao" name="fabricacao">
                             </div>
                             <div class="col">
                                 <label for="recipient-name" class="col-form-label">Val:</label>
-                                <input type="text" placeholder="01/01/1900" class="form-control" id="recipient-name">
+                                <input type="text" placeholder="01/01/1900" class="form-control" id="vencimento" name="vencimento">
                             </div>
                         </div>
                         <div class="mb-3">
                             <label for="message-text"
                                    class="col-form-label">Observação:</label>
                             <textarea class="form-control" placeholder="Cilindro com arranhão na lateral"
-                                      id="message-text"></textarea>
+                                      id="obs" name="obs"></textarea>
                         </div>
                         <div class="mb-3">
                             <label for="formFile" class="form-label">Certificado de Analise</label>
-                            <input class="form-control" type="file" id="formFile">
+                            <input class="form-control" type="file" id="endereco" name="endereco">
                         </div>
 
                     </form>
