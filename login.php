@@ -50,13 +50,14 @@
         </div>
     </div>
 </section>
+
 <!-- ======= Footer ======= -->
 <section class="h-75 gradient-form" style="background-color: #eee;">
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-md-9 col-lg-6 col-xl-5">
-                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
+                    <img src="assets/img/login-img.webp"
                          class="img-fluid" alt="Sample image">
                 </div>
                 <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
@@ -83,21 +84,21 @@
                         <!-- Email input -->
                         <div class="form-outline mb-4">
                             <input type="email" id="form3Example3" class="form-control form-control-lg"
-                                   placeholder="Enter a valid email address" />
+                                   placeholder="Enter a valid email address"/>
                             <label class="form-label" for="form3Example3">Email address</label>
                         </div>
 
                         <!-- Password input -->
                         <div class="form-outline mb-3">
                             <input type="password" id="form3Example4" class="form-control form-control-lg"
-                                   placeholder="Enter password" />
+                                   placeholder="Enter password"/>
                             <label class="form-label" for="form3Example4">Password</label>
                         </div>
 
                         <div class="d-flex justify-content-between align-items-center">
                             <!-- Checkbox -->
                             <div class="form-check mb-0">
-                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3" />
+                                <input class="form-check-input me-2" type="checkbox" value="" id="form2Example3"/>
                                 <label class="form-check-label" for="form2Example3">
                                     Remember me
                                 </label>
@@ -106,10 +107,14 @@
                         </div>
 
                         <div class="text-center text-lg-start mt-4 pt-2">
-                            <button type="button" class="btn btn-success btn-lg"
-                                    style="padding-left: 2.5rem; padding-right: 2.5rem;">Login</button>
-                            <p class="small fw-bold mt-2 pt-1 mb-0">Não queria estar aqui? <a href="index.html  "
-                                                                                              class="link-danger">Retornar ao site</a></p>
+                            <a href="painel.html">
+                                <button type="button" class="btn btn-success btn-lg"
+                                        style="padding-left: 2.5rem; padding-right: 2.5rem;">Login
+                                </button>
+                            </a>
+                            <p class="small fw-bold mt-2 pt-1 mb-0">Não queria estar aqui?
+                                <a href="index.html  " class="link-danger">Retornar ao site</a>
+                            </p>
                         </div>
 
                     </form>
@@ -120,22 +125,21 @@
     </section>
 
 
-<a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
 
-<div id="preloader"></div>
+    <div id="preloader"></div>
 
-<!-- Vendor JS Files -->
-<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-<script src="assets/vendor/aos/aos.js"></script>
-<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-<script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-<script src="assets/vendor/php-email-form/validate.js"></script>
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/aos/aos.js"></script>
+    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
 
-<!-- Template Main JS File -->
-<script src="assets/js/main.js"></script>
-
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
 
 </body>
 
