@@ -16,5 +16,5 @@ if(mysqli_query($conexao, $query1)){
     header("Location: ../painel.php");
 
 }else{
-    echo $query;
+    $_SESSION['aviso'] = "Erro ao Excluir - ".$query1;
 }

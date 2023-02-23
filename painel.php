@@ -66,7 +66,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 <!-- ======= Footer ======= -->
 <section class="h-100 gradient-form" style="background-color: #eee; height: auto">
 
-    <div class="container">
+    <div class="container ">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -86,13 +86,13 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                 </div>
             </div>
 
-            <?php if(isset($_SESSION['aviso'])){
+            <?php if (isset($_SESSION['aviso'])) {
                 echo "<div class= 'alert alert-success' role='alert'>";
                 echo $_SESSION['aviso'];
                 echo "</div>";
 
                 $_SESSION['aviso'] = '';
-                unset( $_SESSION['aviso']);
+                unset($_SESSION['aviso']);
             }
             ?>
 
@@ -115,34 +115,37 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                 <tbody>
 
                 <?php foreach ($cilindros as $lista): ?>
-                <tr>
-                    <td>
+                    <tr>
+                        <td>
 							<span class="custom-checkbox">
 								<input type="checkbox" id="checkbox1" name="options[]" value="1">
 								<label for="checkbox1"></label>
 							</span>
-                    </td>
-                    <td><?= $lista['codigo'] ?></td>
-                    <td><?= $lista['fabricacao'] ?></td>
-                    <td><?= $lista['validade'] ?></td>
-                    <td><a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>"><?= $lista['endereco'] ?></a></td>
-                    <td>
-                        <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                            <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i>
-                        </a>
-                        <a href="model/cilindroE.php?id=<?= $lista['codigo'] ?>" class="delete">
-                            <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Delete"></i>
-                        </a>
-                    </td>
-                </tr>
+                        </td>
+                        <td><?= $lista['codigo'] ?></td>
+                        <td><?= $lista['fabricacao'] ?></td>
+                        <td><?= $lista['validade'] ?></td>
+                        <td>
+                            <a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>"><?= $lista['endereco'] ?></a>
+                        </td>
+                        <td>
+                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
+                                <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i>
+                            </a>
+                            <a href="model/cilindroE.php?id=<?= $lista['codigo'] ?>" class="delete">
+                                <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Delete"></i>
+                            </a>
+                        </td>
+                    </tr>
                 <?php endforeach ?>
                 </tbody>
             </table>
 
+
         </div>
     </div>
 
-    <!-- Modal -->
+    <!-- Modal Cadastro-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
@@ -202,9 +205,21 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
     <div id="preloader"></div>
 
+    <br/>
+    <br/>
+    <br/>
+
+
 
     <!-- ======= Footer ======= -->
+    <footer id="footer" class="footer">
 
+        <div class="copyright">
+            &copy; Copyright <strong><span>Oxigenio Cariri</span></strong>. All Rights Reserved
+        </div>
+
+    </footer><!-- End Footer -->
+    <!-- End Footer -->
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
