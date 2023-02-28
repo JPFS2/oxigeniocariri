@@ -1,5 +1,11 @@
 <?php
-    include ('verifica_login.php');
+if($_SESSION['usuario']) {
+    header('Location: painel.php');
+    exit();
+}else{
+
+}
+    include('model/conexao.php');
 ?>
 
 <!DOCTYPE html>

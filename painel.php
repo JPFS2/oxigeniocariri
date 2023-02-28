@@ -144,7 +144,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
         </div>
     </div>
-
     <!-- Modal Cadastro-->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -199,7 +198,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
         </div>
     </div>
 
-
     <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
                 class="bi bi-arrow-up-short"></i></a>
 
@@ -209,16 +207,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     <br/>
     <br/>
 
-
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer" class="footer">
-
-        <div class="copyright">
-            &copy; Copyright <strong><span>Oxigenio Cariri</span></strong>. All Rights Reserved
-        </div>
-
-    </footer><!-- End Footer -->
     <!-- End Footer -->
 
     <!-- Vendor JS Files -->
@@ -232,6 +220,19 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
+
+
+</section>
+
+
+<!-- ======= Footer ======= -->
+<footer id="footer" class="footer">
+
+    <div class="copyright">
+        &copy; Copyright <strong><span>Oxigenio Cariri</span></strong>. All Rights Reserved
+    </div>
+
+</footer><!-- End Footer -->
 
 
 </body>
