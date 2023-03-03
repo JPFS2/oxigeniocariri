@@ -63,8 +63,8 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     </div>
 </section>
 
-<!-- ======= Footer ======= -->
-<section class="h-100 gradient-form" style="background-color: #eee; height: auto">
+<!-- ======= Tabela ======= -->
+<section class="h-100 w-100 gradient-form" style="background-color: #eee;">
 
     <div class="container ">
         <div class="table-wrapper">
@@ -129,8 +129,9 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                             <a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>"><?= $lista['endereco'] ?></a>
                         </td>
                         <td>
-                            <a href="#editEmployeeModal" class="edit" data-toggle="modal">
-                                <i class="bi bi-pencil-square" data-toggle="tooltip" title="Edit"></i>
+                            <a href="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?= $lista['endereco'] ?>" class="edit" data-toggle="modal">
+
+                                <i class="bi bi-qr-code-scan" data-toggle="tooltip" title="Edit"></i>
                             </a>
                             <a href="model/cilindroE.php?id=<?= $lista['codigo'] ?>" class="delete">
                                 <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Delete"></i>

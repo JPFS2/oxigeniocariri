@@ -1,11 +1,9 @@
 <?php
-if($_SESSION['usuario']) {
+if(isset($_SESSION['usuario'])) {
     header('Location: painel.php');
     exit();
-}else{
-
 }
-    include('model/conexao.php');
+include('model/conexao.php');
 ?>
 
 <!DOCTYPE html>
