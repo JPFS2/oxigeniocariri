@@ -44,7 +44,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
 <body>
 <!-- ======= Header ======= -->
-<section id="topbar" class="topbar d-flex align-items-center">
+<section class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
             <i class="bi bi-envelope d-flex align-items-center">
@@ -52,21 +52,20 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
             <i class="bi bi-phone d-flex align-items-center ms-4"><span>+55 88 3532 0017</span></i>
             <i class="bi bi-whatsapp d-flex align-items-center ms-4"><span>+55 88 98149 2016</span></i>
         </div>
-        <div class="social-links d-none d-md-flex align-items-center">
-            <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-            <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-            <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-            <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
+        <div class=" d-none d-md-flex align-items-center">
+
+            <?= $_SESSION['usuario'] ?>
 
         </div>
-        <?= $_SESSION['usuario'] ?>
+
+
     </div>
 </section>
 
 <!-- ======= Tabela ======= -->
-<section class="h-100 w-100 gradient-form" style="background-color: #eee;">
+<section class="gradient-form" style="background-color: #eee;">
 
-    <div class="container ">
+    <div class="container">
         <div class="table-wrapper">
             <div class="table-title">
                 <div class="row">
@@ -79,7 +78,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                     <div class="col-sm-1 py-3 float-right">
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
-                                data-bs-target="#exampleModal">
+                                data-bs-target="#AddModal">
                             <i class="bi bi-clipboard-plus"></i> <span>Adicionar</span>
                         </button>
                     </div>
@@ -126,15 +125,26 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                         <td><?= $lista['fabricacao'] ?></td>
                         <td><?= $lista['validade'] ?></td>
                         <td>
-                            <a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>"><?= $lista['endereco'] ?></a>
+                            <a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>" target="_blank"
+                               rel="noopener noreferrer"><?= $lista['endereco'] ?></a>
+
+
                         </td>
                         <td>
-                            <a href="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?= $lista['endereco'] ?>" class="edit" data-toggle="modal">
 
-                                <i class="bi bi-qr-code-scan" data-toggle="tooltip" title="Edit"></i>
+
+                            <a href="#" data-bs-toggle="modal" data-bs-target="#QrModal"
+                                    data-bs-whatever="<?= $lista['codigo'] ?>"
+                                    data-bs-img="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?= $lista['endereco'] ?>"
+                                    data-bs-fab="<?= $lista['fabricacao'] ?>"
+                                    data-bs-venc="<?= $lista['validade'] ?>">
+                                <i class="bi bi-qr-code-scan" style="font-size:24px"></i>
                             </a>
+
+
                             <a href="model/cilindroE.php?id=<?= $lista['codigo'] ?>" class="delete">
-                                <i class="bi bi-dash-circle-fill" data-toggle="tooltip" title="Delete"></i>
+                                <i class="bi bi-dash-circle-fill" style="font-size:24px" data-toggle="tooltip"
+                                   title="Delete"></i>
                             </a>
                         </td>
                     </tr>
@@ -144,9 +154,11 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
 
         </div>
+        <div class="printable"></div>
     </div>
+
     <!-- Modal Cadastro-->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="AddModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -199,16 +211,80 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
         </div>
     </div>
 
-    <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i
-                class="bi bi-arrow-up-short"></i></a>
+    <!-- Modal QR-->
+    <div class="modal fade" id="QrModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">New message</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
 
-    <div id="preloader"></div>
+                <div class="modal-body">
 
-    <br/>
-    <br/>
-    <br/>
+                    <div class="row">
+                        <div class="col">
+                            <img id="img" src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=123"">
+                        </div>
+                        <div class="col py-3">
+                            <label class="fw-bolder py-0">Codigo</label>
+                            <label class="fw-bolder py-0">Fabricação: </label>
+                            <label class="fw-bolder py-0">Vencimento: </label>
+                        </div>
+                        <div class="col col py-3">
+                            <label id="cod" class="fw-ligh">Codigo</label>
+                            <label id="fab" class="fw-ligh">Fabricação: </label>
+                            <label id="venc" class="fw-ligh">Vencimento: </label>
+                        </div>
+                    </div>
 
-    <!-- End Footer -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Transferencia de elementos para modal -->
+    <script type="text/javascript">
+        const exampleModal = document.getElementById('QrModal')
+        exampleModal.addEventListener('show.bs.modal', event => {
+
+            // Button that triggered the modal
+            const button = event.relatedTarget
+
+
+            // Extract info from data-bs-* attributes
+            const codigo = button.getAttribute('data-bs-whatever')
+            const img = button.getAttribute('data-bs-img')
+            const fab = button.getAttribute('data-bs-fab')
+            const venc = button.getAttribute('data-bs-venc')
+
+
+            // If necessary, you could initiate an AJAX request here
+            // and then do the updating in a callback.
+            //
+            // Update the modal's content.
+            const modalTitle = exampleModal.querySelector('.modal-title')
+            const modalBodyimg = exampleModal.querySelector('.modal-body img')
+            const modalBodyfab = exampleModal.querySelector('.modal-body .row #fab')
+            const modalBodyvenc = exampleModal.querySelector('.modal-body .row #venc')
+            const modalBodycod = exampleModal.querySelector('.modal-body .row #cod')
+
+            modalTitle.textContent = `Cilindro ${codigo}`
+            modalBodyimg.src = img
+            modalBodyfab.textContent = fab;
+            modalBodyvenc.textContent = venc;
+            modalBodycod.textContent = codigo;
+        })
+
+    </script>
+
+
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -223,6 +299,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     <script src="assets/js/main.js"></script>
 
 
+
 </section>
 
 
@@ -234,8 +311,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     </div>
 
 </footer><!-- End Footer -->
-
-
 </body>
 
 </html>
