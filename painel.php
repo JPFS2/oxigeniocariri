@@ -37,13 +37,38 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
+    <style>
+        @media print {
+            body * {
+                visibility: hidden;
+            }
+            #printable, #printable * {
+                visibility: visible;
+            }
+            #printable {
+                position: fixed;
+                left: 0;
+                top: 0;
+            }
+
+            #printable .row .col{
+
+                margin: 0px;
+                padding: 0px;
+                width: 150px;
+            }
+
+        }
+    </style>
+
+
     <!-- Template Main CSS File -->
     <link href="assets/css/main.css" rel="stylesheet">
 
 </head>
 
 <body>
-<!-- ======= Header ======= -->
+<!-- ======= Menu superior ======= -->
 <section class="topbar d-flex align-items-center">
     <div class="container d-flex justify-content-center justify-content-md-between">
         <div class="contact-info d-flex align-items-center">
@@ -85,6 +110,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                 </div>
             </div>
 
+            <!--- Aviso sobre cadastro, exclusão dentre outros ---->
             <?php if (isset($_SESSION['aviso'])) {
                 echo "<div class= 'alert alert-success' role='alert'>";
                 echo $_SESSION['aviso'];
@@ -125,17 +151,14 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                         <td><?= $lista['fabricacao'] ?></td>
                         <td><?= $lista['validade'] ?></td>
                         <td>
-                            <a href="http://localhost/oxigeniocariri<?= $lista['endereco'] ?>" target="_blank"
-                               rel="noopener noreferrer"><?= $lista['endereco'] ?></a>
-
-
+                            <a href="http://oxigeniocarir.epizy.com<?= $lista['endereco'] ?>" target="_blank"
+                               rel="noopener noreferrer">http://oxigeniocarir.epizy.com<?= $lista['endereco'] ?>
+                            </a>
                         </td>
                         <td>
-
-
                             <a href="#" data-bs-toggle="modal" data-bs-target="#QrModal"
                                     data-bs-whatever="<?= $lista['codigo'] ?>"
-                                    data-bs-img="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=<?= $lista['endereco'] ?>"
+                                    data-bs-img="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://oxigeniocarir.epizy.com<?= $lista['endereco'] ?>"
                                     data-bs-fab="<?= $lista['fabricacao'] ?>"
                                     data-bs-venc="<?= $lista['validade'] ?>">
                                 <i class="bi bi-qr-code-scan" style="font-size:24px"></i>
@@ -206,7 +229,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                     </form>
 
                 </div>
-
             </div>
         </div>
     </div>
@@ -220,34 +242,34 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
 
-                <div class="modal-body">
+                <div id="printable" class="modal-body">
 
                     <div class="row">
-                        <div class="col">
+                        <div class="col-4">
                             <img id="img" src="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=123"">
                         </div>
-                        <div class="col py-3">
-                            <label class="fw-bolder py-0">Codigo</label>
-                            <label class="fw-bolder py-0">Fabricação: </label>
-                            <label class="fw-bolder py-0">Vencimento: </label>
+                        <div class="col-4 py-4">
+                            <h5 class="fw-bolder py-0 row">Codigo . . . . . . </h5>
+                            <h5 class="fw-bolder py-0 row">Fabricação  . . </h5>
+                            <h5 class="fw-bolder py-0 row">Vencimento  . </h5>
                         </div>
-                        <div class="col col py-3">
-                            <label id="cod" class="fw-ligh">Codigo</label>
-                            <label id="fab" class="fw-ligh">Fabricação: </label>
-                            <label id="venc" class="fw-ligh">Vencimento: </label>
+                        <div class="col dados py-4">
+                            <h5 id="cod" class="fw-semibold">Codigo :</h5>
+                            <h5 id="fab" class="fw-semibold">Fabricação : </h5>
+                            <h5 id="venc" class="fw-semibold">Vencimento : </h5>
                         </div>
                     </div>
 
+                    <div id="img-out"></div>
+
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                    <button type="button" class="btn btn-secondary" id="btnSave">Salvar</button>
                     <button type="button" class="btn btn-primary" id="btnPrint">Imprimir</button>
                 </div>
             </div>
         </div>
     </div>
-
-
 
     <!-- Transferencia de elementos para modal -->
     <script type="text/javascript">
@@ -284,7 +306,33 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
     </script>
 
+    <!-- Botão imprimir -->
+    <script type="text/javascript">
+        document.getElementById('btnPrint').onclick = function() {
+            window.print();
+        };
+    </script>
 
+    <!-- Botão Salvar IMG -->
+    <script type="text/javascript">
+        $(function() {
+            $("#btnSave").click(function() {
+                html2canvas($("#printable"), {
+                    onrendered: function(canvas) {
+                        theCanvas = canvas;
+                        document.body.appendChild(canvas);
+
+                        // Convert and download as image
+                        Canvas2Image.saveAsPNG(canvas);
+                        $("#img-out").append(canvas);
+                        // Clean up
+                        //document.body.removeChild(canvas);
+                    }
+                });
+            });
+        });
+
+    </script>
 
     <!-- Vendor JS Files -->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -298,10 +346,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
     <!-- Template Main JS File -->
     <script src="assets/js/main.js"></script>
 
-
-
 </section>
-
 
 <!-- ======= Footer ======= -->
 <footer id="footer" class="footer">
@@ -312,7 +357,6 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
 </footer><!-- End Footer -->
 </body>
-
 </html>
 
 
