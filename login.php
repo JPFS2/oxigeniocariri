@@ -60,7 +60,7 @@ include('model/conexao.php');
 </section>
 
 <!-- ======= Footer ======= -->
-<section class="h-75 gradient-form" style="background-color: #eee;">
+<section class="gradient-form" style="background-color: #eee;">
     <section class="vh-100">
         <div class="container-fluid h-custom">
             <div class="row d-flex justify-content-center align-items-center h-100">

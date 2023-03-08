@@ -42,16 +42,18 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
             body * {
                 visibility: hidden;
             }
+
             #printable, #printable * {
                 visibility: visible;
             }
+
             #printable {
                 position: fixed;
                 left: 0;
                 top: 0;
             }
 
-            #printable .row .col{
+            #printable .row .col {
 
                 margin: 0px;
                 padding: 0px;
@@ -121,7 +123,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
             }
             ?>
 
-            <table class="table table-striped table-hover">
+            <table class="table table-striped table-hover ">
                 <thead>
                 <tr>
                     <th>
@@ -157,10 +159,10 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                         </td>
                         <td>
                             <a href="#" data-bs-toggle="modal" data-bs-target="#QrModal"
-                                    data-bs-whatever="<?= $lista['codigo'] ?>"
-                                    data-bs-img="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://oxigeniocarir.epizy.com<?= $lista['endereco'] ?>"
-                                    data-bs-fab="<?= $lista['fabricacao'] ?>"
-                                    data-bs-venc="<?= $lista['validade'] ?>">
+                               data-bs-whatever="<?= $lista['codigo'] ?>"
+                               data-bs-img="https://chart.googleapis.com/chart?chs=150x150&cht=qr&chl=http://oxigeniocarir.epizy.com<?= $lista['endereco'] ?>"
+                               data-bs-fab="<?= $lista['fabricacao'] ?>"
+                               data-bs-venc="<?= $lista['validade'] ?>">
                                 <i class="bi bi-qr-code-scan" style="font-size:24px"></i>
                             </a>
 
@@ -250,8 +252,8 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
                         </div>
                         <div class="col-4 py-4">
                             <h5 class="fw-bolder py-0 row">Codigo . . . . . . </h5>
-                            <h5 class="fw-bolder py-0 row">Fabricação  . . </h5>
-                            <h5 class="fw-bolder py-0 row">Vencimento  . </h5>
+                            <h5 class="fw-bolder py-0 row">Fabricação . . </h5>
+                            <h5 class="fw-bolder py-0 row">Vencimento . </h5>
                         </div>
                         <div class="col dados py-4">
                             <h5 id="cod" class="fw-semibold">Codigo :</h5>
@@ -308,17 +310,17 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
 
     <!-- Botão imprimir -->
     <script type="text/javascript">
-        document.getElementById('btnPrint').onclick = function() {
+        document.getElementById('btnPrint').onclick = function () {
             window.print();
         };
     </script>
 
     <!-- Botão Salvar IMG -->
     <script type="text/javascript">
-        $(function() {
-            $("#btnSave").click(function() {
+        $(function () {
+            $("#btnSave").click(function () {
                 html2canvas($("#printable"), {
-                    onrendered: function(canvas) {
+                    onrendered: function (canvas) {
                         theCanvas = canvas;
                         document.body.appendChild(canvas);
 
