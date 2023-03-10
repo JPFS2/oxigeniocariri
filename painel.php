@@ -80,9 +80,7 @@ $cilindros = $conexao->query($colindro) or die($mysqli->error);
             <i class="bi bi-whatsapp d-flex align-items-center ms-4"><span>+55 88 98149 2016</span></i>
         </div>
         <div class=" d-none d-md-flex align-items-center">
-
             <?= $_SESSION['usuario'] ?>
-
         </div>
 
 
